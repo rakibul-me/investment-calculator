@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+.calculator-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.calculator-container .calculator-tabs {
+  margin-top: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.calculator-container .calculator-tabs * {
+  background-color: #38c7ff;
+  margin: 0.5em 0.25em;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 300ms ease;
+  cursor: pointer;
+}
+.calculator-container .calculator-tabs *:hover {
+  background-color: #9acdff;
+}
+.calculator-container .calculator-tabs *.active {
+  background-color: rgb(255, 123, 0);
+}
+.calculator-container * {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.all-calculator {
+  padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.all-calculator > * {
+  text-align: center;
+  position: relative;
+  min-width: 300px;
+  width: 850px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.349);
+}
+
+.all-calculator > * > h3 {
+  text-align: center;
+}
+.all-calculator form label {
+  display: block;
+  margin: 0.25em 0;
+}
+.all-calculator form .value {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.all-calculator form .value .type {
+  min-width: 70px;
+  display: inline-block;
+  border-radius: 0 8px 8px 0;
+  background-color: rgba(255, 123, 0, 0.575);
+  padding: 0.25em 0.5em;
+  font-size: 1.1em;
+}
+.all-calculator form input {
+  flex: 1;
+  width: 250px;
+  display: inline-block;
+  border: none;
+  background-color: rgba(0, 113, 179, 0.123);
+  border-radius: 8px 0 0 8px;
+  padding: 0.25em 0.5em;
+  outline-width: 0;
+  font-size: 1.1em;
+  transition: background-color 0.2s ease-in-out;
+}
+.all-calculator form input:focus {
+  outline: none;
+  background-color: rgba(0, 113, 179, 0.253);
+}
+.all-calculator form hr {
+  margin: 2em 0 1em;
+  border-color: rgba(0, 0, 0, 0.11) transparent transparent transparent;
+}
+.all-calculator form .result p {
+  width: 320px;
+  display: inline-block;
+  background-color: #9acdff;
+  margin: 0.5em 0;
+  padding: 0.25em 0.5em;
+  font-size: 1.1em;
+  border-radius: 8px;
+  text-align: center;
+}
+.all-calculator form .result .value p {
+  width: 250px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#calculator2,
+#calculator3 {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+.all-calculator .level {
+  display: inline-block;
+  text-align: center;
+  height: 82px;
+  position: relative;
+}
+.all-calculator .level svg {
+  width: 100%;
+}
+.all-calculator .level .indicator {
+  position: absolute;
+  bottom: 1.5px;
+  right: 50%;
+  width: 50px;
+  height: 3px;
+  background-color: rgb(0, 0, 0);
+  transform-origin: right center;
+  transform: rotateZ(0deg);
+  border-radius: 3px;
+  transition: transform 0.2s ease;
+}
+.all-calculator .level .indicator::after {
+  content: "";
+  background-color: black;
+  width: 7.5px;
+  height: 7.5px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%, -25%);
+  border-radius: 50px;
+}
+.clear {
+  margin: 1em 0;
+  padding: 0.25em 0.5em;
+  font-size: 1em;
+  border: none;
+  background-color: rgb(255, 123, 0);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.all-calculator form .row,
+.all-calculator form .result {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+@media screen and (max-width: 850px) {
+  .all-calculator {
+    width: 90%;
+  }
+  .all-calculator form {
+    position: relative;
+  }
+  .all-calculator form label {
+    text-align: left;
+  }
+  .all-calculator form .result p {
+    width: 100%;
+  }
+  .all-calculator form .result .value p {
+    width: 100%;
+  }
+  .all-calculator form .row .value .input {
+    width: 100%;
+  }
+  .all-calculator form .result,
+  .all-calculator form .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .all-calculator form .result > *,
+  .all-calculator form .row > * {
+    width: 100%;
+  }
+  .all-calculator form input {
+    width: 100%;
+  }
+}

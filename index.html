@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="calculator-container">
+
+        <div class="calculator-tabs">
+            <div id="calculator-tab1" class="active" onclick='changeCalculator(1)'>Calculator 1</div>
+            <div id="calculator-tab2" onclick='changeCalculator(2)'>Calculator 2</div>
+            <div id="calculator-tab3" onclick='changeCalculator(3)'>Calculator 3</div>
+        </div>
+        <div class="all-calculator">
+            <div id="calculator1">
+                <h3>Calculator 1</h3>
+                <form>
+                    <div class="row">
+                        <label for="returnOnInv1">Return on investment : </label>
+                        <div class="value"><input type="number" name="returnOnInv1" id="returnOnInv1" step="1000" required autofocus>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="costOfInv1">Cost of investment : </label>
+                        <div class="value">
+                            <input type="number" name="costOfInv1" id="costOfInv1" step="1000" required>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="result">
+                        <label>Return on investment :</label>
+                        <p id="rsltRtnOfInv1">&nbsp;</p>
+                    </div>
+                    <div class="level">
+                        <div id="indicator1" class="indicator"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="160"
+                            height="80" viewBox="0 0 160 80">
+                            <defs>
+                                <linearGradient id="linear-gradient" x1="0.036" y1="0.312" x2="1" y2="0.515"
+                                    gradientUnits="objectBoundingBox">
+                                    <stop offset="0" stop-color="#91ff00" />
+                                    <stop offset="1" stop-color="#008044" />
+                                </linearGradient>
+                                <clipPath id="clip-Artboard_1">
+                                    <rect width="160" height="80" />
+                                </clipPath>
+                            </defs>
+                            <g id="Artboard_1" data-name="Artboard – 1" clip-path="url(#clip-Artboard_1)">
+                                <circle id="Ellipse_1" data-name="Ellipse 1" cx="69" cy="69" r="69"
+                                    transform="translate(11 11)" fill="url(#linear-gradient)" />
+                                <path id="Path_1" data-name="Path 1"
+                                    d="M230.5,167.5H160.96a39.708,39.708,0,0,1,.858-11.076C178.858,159.121,230.5,167.5,230.5,167.5Z"
+                                    transform="translate(-150 -87)" fill="#ff1e1e" />
+                                <path id="Path_2" data-name="Path 2"
+                                    d="M168.426,135.891s-6.136,12.348-6.513,20.646c28.667,4.526,68.839,11.033,68.839,11.033Z"
+                                    transform="translate(-150 -87)" fill="#f70" />
+                                <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="52.5" cy="53.5" rx="52.5" ry="53.5"
+                                    transform="translate(28 27)" fill="#fff" />
+                            </g>
+                        </svg>
+                    </div>
+                </form>
+                <button onclick="clear1()" class="clear">Clear</button>
+            </div>
+            <div id="calculator2">
+                <h3>Calculator 2</h3>
+                <form>
+                    <div class="row">
+                        <label for="operatingPrftBfrInv">Operating profit before investment : </label>
+                        <div class="value"><input type="number" name="operatingPrftBfrInv" id="operatingPrftBfrInv" step="1000" required>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="capitalInvested">Capital Invested : </label>
+                        <div class="value">
+                            <input type="number" name="capitalInvested" id="capitalInvested" step="1000" required>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="result">
+                        <label>Return on investment before investment :</label>
+                        <p id="rsltRtnOfInvBfrInv">&nbsp;</p>
+                    </div>
+                    <div class="level">
+                        <div id="indicator2" class="indicator"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="160"
+                            height="80" viewBox="0 0 160 80">
+                            <defs>
+                                <linearGradient id="linear-gradient2" x1="0.036" y1="0.312" x2="1" y2="0.515"
+                                    gradientUnits="objectBoundingBox">
+                                    <stop offset="0" stop-color="#91ff00" />
+                                    <stop offset="1" stop-color="#008044" />
+                                </linearGradient>
+                                <clipPath id="clip-Artboard_1">
+                                    <rect width="160" height="80" />
+                                </clipPath>
+                            </defs>
+                            <g id="Artboard_1" data-name="Artboard – 1" clip-path="url(#clip-Artboard_1)">
+                                <circle id="Ellipse_1" data-name="Ellipse 1" cx="69" cy="69" r="69"
+                                    transform="translate(11 11)" fill="url(#linear-gradient2)" />
+                                <path id="Path_1" data-name="Path 1"
+                                    d="M230.5,167.5H160.96a39.708,39.708,0,0,1,.858-11.076C178.858,159.121,230.5,167.5,230.5,167.5Z"
+                                    transform="translate(-150 -87)" fill="#ff1e1e" />
+                                <path id="Path_2" data-name="Path 2"
+                                    d="M168.426,135.891s-6.136,12.348-6.513,20.646c28.667,4.526,68.839,11.033,68.839,11.033Z"
+                                    transform="translate(-150 -87)" fill="#f70" />
+                                <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="52.5" cy="53.5" rx="52.5" ry="53.5"
+                                    transform="translate(28 27)" fill="#fff" />
+                            </g>
+                        </svg>
+                    </div>
+                    <hr style='margin-bottom: 2em;'>
+                    <div class="row">
+                        <label for="operatingPrftImprvAfInv">Operating profit improvement after investment : </label>
+                        <div class="value">
+                            <input type="number" name="operatingPrftImprvAfInv" id="operatingPrftImprvAfInv" step="1000" required>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="investmentCost">Investment cost : </label>
+                        <div class="value">
+                            <input type="number" name="investmentCost" id="investmentCost" step="1000" required>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="result">
+                        <label>Return on investment after investment :</label>
+                        <p id="rsltRtnOnInvAfInv">&nbsp;</p>
+                    </div>
+                    <div class="result">
+                        <label>Return on investment :</label>
+                        <p id="rsltRtnOnInv">&nbsp;</p>
+                    </div>
+                </form>
+                <button onclick="clear2()" class="clear">Clear</button>
+            </div>
+            <div id="calculator3">
+                <h3>Calculator 3</h3>
+                <form>
+                    <div class="row">
+                        <label for="valueOfInv">Value of investment : </label>
+                        <div class="value"><input type="number" name="valueOfInv" id="valueOfInv" step="1000" required>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="targetedReturn">Targeted Return : </label>
+                        <div class="value">
+                            <input type="number" name="targetedReturn" id="targetedReturn" step="1" required>
+                            <div class="type">%</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="holdTime">Hold Time : </label>
+                        <div class="value">
+                            <input type="number" name="holdTime" id="holdTime" step="1" required>
+                            <div class="type">Years</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="residualValue">Residual value : </label>
+                        <div class="value">
+                            <input type="number" name="residualValue" id="residualValue" step="1" required>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <h4>Income and expenses per year</h4>
+                    <div class="row">
+                        <label for="staffCosts">Staff costs : </label>
+                        <div class="value">
+                            <input type="number" name="staffCosts" id="staffCosts" step="100" required>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="energyCosts">Energy costs : </label>
+                        <div class="value">
+                            <input type="number" name="energyCosts" id="energyCosts" step="100" required>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="maintenanceCosts">Maintenance costs : </label>
+                        <div class="value">
+                            <input type="number" name="maintenanceCosts" id="maintenanceCosts" step="100" required>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="otherCosts">Other costs : </label>
+                        <div class="value">
+                            <input type="number" name="otherCosts" id="otherCosts" step="100" required>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="salesRevenue">Sales revenue : </label>
+                        <div class="value">
+                            <input type="number" name="salesRevenue" id="salesRevenue" step="1000" required>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="result">
+                        <label>Net income :</label>
+                        <div class="value">
+                            <p id="rsltNetIncome">&nbsp;</p>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 1.1em;">
+                    <div class="result">
+                        <label>Total return present value method :</label>
+                        <div class="value">
+                            <p id="ttlRtnPrsntVluMthd">&nbsp;</p>
+                            <div class="type">EUR</div>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <label>Internal Rate :</label>
+                        <div class="value">
+                            <p id="internalRate">&nbsp;</p>
+                            <div class="type">%</div>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <label>Payback time :</label>
+                        <div class="value">
+                            <p id="paybackTime">&nbsp;</p>
+                            <div class="type">Years</div>
+                        </div>
+                    </div>
+                </form>
+                <button onclick="clear3()" class="clear">Clear</button>
+            </div>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+
+</html>
